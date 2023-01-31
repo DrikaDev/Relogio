@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.7rem;
+}
+
+body{
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 1.5rem;
+    height: 4rem;
+}
+
+.clock{
+    width: 13rem;
+    height: 13rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.clock .number{
+    --rotation: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+
+.clock .number.number-1{
+    --rotation: 30deg
+}
+
+.clock .number.number-2{
+    --rotation: 60deg
+}
+
+.clock .number.number-3{
+    --rotation: 90deg
+}
+
+.clock .number.number-4{
+    --rotation: 120deg
+}
+
+.clock .number.number-5{
+    --rotation: 150deg
+}
+
+.clock .number.number-6{
+    --rotation: 180deg
+}
+
+.clock .number.number-7{
+    --rotation: 210deg
+}
+
+.clock .number.number-8{
+    --rotation: 240deg
+}
+
+.clock .number.number-9{
+    --rotation: 270deg
+}
+
+.clock .number.number-10{
+    --rotation: 300deg
+}
+
+.clock .number.number-11{
+    --rotation: 330deg
+}
+
+/* Bolinha dos ponteiros */
+
+.clock::after{
+    content: "";
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* Ponteiros */
+
+.clock .hand{
+    --rotation: 0;
+
+    position: absolute;
+
+    /* width: 5px;
+    height: 35%; */
+    background-color: black;
+
+    bottom: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+}
+
+.clock .hand.seconds{
+    width: 3px;
+    height: 35%;
+    background-color: red;
+}
+
+.clock .hand.minutes{
+    width: 5px;
+    height: 32%;
+    background-color: black;
+}
+
+.clock .hand.hours{
+    width: 7px;
+    height: 26%;
+    background-color: black;
+}
